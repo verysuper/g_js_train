@@ -1,0 +1,258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<title>HFS /相關連結/JavaScript/</title>
+	<link rel="stylesheet" href="/?mode=section&id=style.css" type="text/css">
+    <script type="text/javascript" src="/?mode=jquery"></script>
+	<link rel="shortcut icon" href="/favicon.ico">
+	<style class='trash-me'>
+	.onlyscript, button[onclick] { display:none; }
+	</style>
+    <script>
+    // this object will store some %symbols% in the javascript space, so that libs can read them
+    HFS = { folder:'/相關連結/JavaScript/', number:16, paged:1 }; 
+    </script>
+	<script type="text/javascript" src="/?mode=section&id=lib.js"></script>
+</head>
+<body>
+<!-- -->
+<div id='panel'>
+    	<fieldset id='msgs'>
+		<legend><img src="/~img10"> Messages</legend>
+		<ul style='padding-left:2em'>
+		</ul>
+	</fieldset>
+
+    	<fieldset id='login'>
+		<legend><img src="/~img27"> User</legend>
+		<center>
+		<a href="~login">Login</a>
+		</center>
+	</fieldset>                                       
+
+    	<fieldset id='folder'>
+		<legend><img src="/~img8"> Folder</legend>
+
+       <div style='float:right; position:relative; top:-1em; font-weight:bold;'>
+		<a href=".."><img src="/~img14"> Up</a>
+		</div>
+
+		<div id='breadcrumbs'>
+		
+		<a href="/"  /> <img src="/~img1"> Home</a><a href="/%E7%9B%B8%E9%97%9C%E9%80%A3%E7%B5%90/" style='padding-left:1.4em;' /> &raquo; 相關連結</a><a href="/%E7%9B%B8%E9%97%9C%E9%80%A3%E7%B5%90/JavaScript/" style='padding-left:2.1em;' /> &raquo; JavaScript</a>
+       </div>
+        
+		<div id='folder-stats'>0 folders, 16 files, 2.6 Kbytes
+		</div>
+		
+		
+	</fieldset>
+
+    	<fieldset id='search'>
+		<legend><img src="/~img3"> Search</legend>
+		<form style='text-align:center'>
+			<input name='search' size='15' value="">
+			<input type='submit' value="go">
+		</form>
+		<div style='margin-top:0.5em;' class='hidden popup'>
+			<fieldset>
+				<legend>Where to search</legend>
+					<input type='radio' name='where' value='fromhere' checked='true' />  this folder and sub-folders
+					<br><input type='radio' name='where' value='here' />  this folder only
+					<br><input type='radio' name='where' value='anywhere' />  entire server
+			</fieldset>
+		</div>
+	</fieldset>
+
+    	<fieldset id='select' class='onlyscript'>
+		<legend><img src="/~img15"> Select</legend>
+		<center>
+    	<button onclick="
+            var x = $('#files .selector');
+            if (x.size() > x.filter(':checked').size())
+                x.attr('checked', true).closest('tr').addClass('selected');
+			else
+                x.attr('checked', false).closest('tr').removeClass('selected');
+			selectedChanged();
+			">All</button>
+    	<button onclick="
+            $('#files .selector').attr('checked', function(i,v){ return !v }).closest('tr').toggleClass('selected');
+			selectedChanged();
+            ">Invert</button>
+    	<button onclick='selectionMask.call(this)'>Mask</button>
+		<p style='display:none; margin-top:1em;'><span id='selected-number'>0</span> items selected</p>
+		</center>
+	</fieldset>
+
+    	
+
+    	<fieldset id='actions'>
+		<legend><img src="/~img18"> Actions</legend>
+		<center>
+		
+		
+		
+		
+		<button id='archiveBtn' onclick='if (confirm("Are you sure?")) submit({}, "/%E7%9B%B8%E9%97%9C%E9%80%A3%E7%B5%90/JavaScript/?mode=archive&recursive")'>Archive</button>
+		<a href="/%E7%9B%B8%E9%97%9C%E9%80%A3%E7%B5%90/JavaScript/?tpl=list&folders-filter=\&recursive">Get list</a>
+		</center>
+	</fieldset>
+
+    	<fieldset id='serverinfo'>
+		<legend><img src="/~img0"> Server information</legend>
+		<a href="http://www.rejetto.com/hfs/">HttpFileServer 2.3k</a>
+		<br />Server time: 2018/1/24 下午 07:30:59
+		<br />Server uptime: 00:45:11
+	</fieldset>
+
+
+</div>
+
+<div id='files_outer'>
+	<div style='height:1.6em;'></div>  
+	
+        <form method='post'>
+            <table id='files'>
+             
+            <th><a href="/%E7%9B%B8%E9%97%9C%E9%80%A3%E7%B5%90/JavaScript/?sort=n">Name</a><a href="/%E7%9B%B8%E9%97%9C%E9%80%A3%E7%B5%90/JavaScript/?sort=e">.extension</a>
+            <th><a href="/%E7%9B%B8%E9%97%9C%E9%80%A3%E7%B5%90/JavaScript/?sort=s">Size</a>
+            <th><a href="/%E7%9B%B8%E9%97%9C%E9%80%A3%E7%B5%90/JavaScript/?sort=t">Timestamp</a>
+            <th><a href="/%E7%9B%B8%E9%97%9C%E9%80%A3%E7%B5%90/JavaScript/?sort=d">Hits</a>
+            	<tr class=''><td>
+        <input type='checkbox' class='selector' name='selection' value="9%20Walker%20Studio-9W%E5%80%8B%E4%BA%BA%E8%A8%AD%E8%A8%88%E5%B7%A5%E4%BD%9C%E5%AE%A4.URL"  />
+		
+		
+		<a href="9%20Walker%20Studio-9W%E5%80%8B%E4%BA%BA%E8%A8%AD%E8%A8%88%E5%B7%A5%E4%BD%9C%E5%AE%A4.URL"><img src="/~img42"> 9 Walker Studio-9W個人設計工作室.URL</a>
+		
+		
+<td>182B<td>2015/7/10 下午 05:47:48<td>2
+	<tr class='even'><td>
+        <input type='checkbox' class='selector' name='selection' value="coodict%20javascript-in-one-pic%20%C2%B7%20GitHub.URL"  />
+		
+		
+		<a href="coodict%20javascript-in-one-pic%20%C2%B7%20GitHub.URL"><img src="/~img42"> coodict javascript-in-one-pic · GitHub.URL</a>
+		
+		
+<td>138B<td>2015/7/10 下午 06:17:37<td>0
+	<tr class=''><td>
+        <input type='checkbox' class='selector' name='selection' value="D3.JS%20%E5%85%A5%E9%96%80%E7%B3%BB%E5%88%97%20%EF%BC%8D%20Voronoi%20Diagram%20%E6%95%99%E5%AD%B8%20%20%20%E8%B3%87%E6%96%99%E8%A6%96%E8%A6%BA%E5%8C%96.URL"  />
+		
+		
+		<a href="D3.JS%20%E5%85%A5%E9%96%80%E7%B3%BB%E5%88%97%20%EF%BC%8D%20Voronoi%20Diagram%20%E6%95%99%E5%AD%B8%20%20%20%E8%B3%87%E6%96%99%E8%A6%96%E8%A6%BA%E5%8C%96.URL"><img src="/~img42"> D3.JS 入門系列 － Voronoi Diagram 教學   資料視覺化.URL</a>
+		
+		
+<td>143B<td>2015/7/10 下午 06:17:37<td>0
+	<tr class='even'><td>
+        <input type='checkbox' class='selector' name='selection' value="DFUNS%20%E7%9A%84%E5%B7%A5%E4%BD%9C%E7%AD%86%E8%A8%98%20%20Dreamweaver%20%E8%A1%8C%E7%82%BA%20-%20%E4%BA%92%E5%8B%95%E5%BC%8F%E6%9B%B4%E6%94%B9%E6%96%87%E5%AD%97%E5%A4%A7%E5%B0%8F.URL"  />
+		
+		
+		<a href="DFUNS%20%E7%9A%84%E5%B7%A5%E4%BD%9C%E7%AD%86%E8%A8%98%20%20Dreamweaver%20%E8%A1%8C%E7%82%BA%20-%20%E4%BA%92%E5%8B%95%E5%BC%8F%E6%9B%B4%E6%94%B9%E6%96%87%E5%AD%97%E5%A4%A7%E5%B0%8F.URL"><img src="/~img42"> DFUNS 的工作筆記  Dreamweaver 行為 - 互動式更改文字大小.URL</a>
+		
+		
+<td>203B<td>2015/7/10 下午 05:47:48<td>0
+	<tr class=''><td>
+        <input type='checkbox' class='selector' name='selection' value="Dreamweaver%E6%95%99%E5%AD%B8%20-%20%E6%9B%B4%E6%94%B9%E5%B1%AC%E6%80%A7.URL"  />
+		
+		
+		<a href="Dreamweaver%E6%95%99%E5%AD%B8%20-%20%E6%9B%B4%E6%94%B9%E5%B1%AC%E6%80%A7.URL"><img src="/~img42"> Dreamweaver教學 - 更改屬性.URL</a>
+		
+		
+<td>132B<td>2015/7/10 下午 05:47:48<td>1
+	<tr class='even'><td>
+        <input type='checkbox' class='selector' name='selection' value="JavaScript%20-%20%E7%B6%AD%E5%9F%BA%E7%99%BE%E7%A7%91%EF%BC%8C%E8%87%AA%E7%94%B1%E7%9A%84%E7%99%BE%E7%A7%91%E5%85%A8%E6%9B%B8.url"  />
+		
+		
+		<a href="JavaScript%20-%20%E7%B6%AD%E5%9F%BA%E7%99%BE%E7%A7%91%EF%BC%8C%E8%87%AA%E7%94%B1%E7%9A%84%E7%99%BE%E7%A7%91%E5%85%A8%E6%9B%B8.url"><img src="/~img42"> JavaScript - 維基百科，自由的百科全書.url</a>
+		
+		
+<td>259B<td>2013/11/5 下午 05:35:48<td>10
+	<tr class=''><td>
+        <input type='checkbox' class='selector' name='selection' value="JavaScript%20Quiz%20Test(W3School).URL"  />
+		
+		
+		<a href="JavaScript%20Quiz%20Test(W3School).URL"><img src="/~img37"> JavaScript Quiz Test(W3School).URL</a>
+		
+		
+<td>245B<td>2015/9/16 下午 05:07:28<td>0
+	<tr class='even'><td>
+        <input type='checkbox' class='selector' name='selection' value="JavaScript.com.URL"  />
+		
+		
+		<a href="JavaScript.com.URL"><img src="/~img42"> JavaScript.com.URL</a>
+		
+		
+<td>117B<td>2015/7/10 下午 06:17:37<td>0
+	<tr class=''><td>
+        <input type='checkbox' class='selector' name='selection' value="JavaScript.url"  />
+		
+		
+		<a href="JavaScript.url"><img src="/~img42"> JavaScript.url</a>
+		
+		
+<td>234B<td>2016/8/25 下午 01:11:02<td>0
+	<tr class='even'><td>
+        <input type='checkbox' class='selector' name='selection' value="JS%E4%B9%8B%E7%88%B6%EF%BC%9Awasm%E6%A0%BC%E5%BC%8F%E8%83%BD%E8%AE%93%E7%B6%B2%E9%A0%81%E5%BF%AB20%E5%80%8D%EF%BC%8C%E4%B8%8D%E6%98%AF%E5%8F%96%E4%BB%A3%E8%80%8C%E8%A6%81%E8%AE%93JS%E6%9B%B4%E5%BC%B7%20%20%20iThome.URL"  />
+		
+		
+		<a href="JS%E4%B9%8B%E7%88%B6%EF%BC%9Awasm%E6%A0%BC%E5%BC%8F%E8%83%BD%E8%AE%93%E7%B6%B2%E9%A0%81%E5%BF%AB20%E5%80%8D%EF%BC%8C%E4%B8%8D%E6%98%AF%E5%8F%96%E4%BB%A3%E8%80%8C%E8%A6%81%E8%AE%93JS%E6%9B%B4%E5%BC%B7%20%20%20iThome.URL"><img src="/~img42"> JS之父：wasm格式能讓網頁快20倍，不是取代而要讓JS更強   iThome.URL</a>
+		
+		
+<td>124B<td>2015/7/10 下午 06:17:37<td>0
+	<tr class=''><td>
+        <input type='checkbox' class='selector' name='selection' value="New%20versions%20of%20CreateJS%20released!%20-%20CreateJS%20Blog.URL"  />
+		
+		
+		<a href="New%20versions%20of%20CreateJS%20released!%20-%20CreateJS%20Blog.URL"><img src="/~img42"> New versions of CreateJS released! - CreateJS Blog.URL</a>
+		
+		
+<td>148B<td>2015/7/10 下午 06:17:37<td>0
+	<tr class='even'><td>
+        <input type='checkbox' class='selector' name='selection' value="Node.js%20and%20io.js%20are%20settling%20their%20differences,%20merging%20back%20together.URL"  />
+		
+		
+		<a href="Node.js%20and%20io.js%20are%20settling%20their%20differences,%20merging%20back%20together.URL"><img src="/~img42"> Node.js and io.js are settling their differences, merging back together.URL</a>
+		
+		
+<td>196B<td>2015/7/10 下午 06:17:37<td>0
+	<tr class=''><td>
+        <input type='checkbox' class='selector' name='selection' value="onload%E5%92%8ConUnload%E7%AF%84%E4%BE%8B.URL"  />
+		
+		
+		<a href="onload%E5%92%8ConUnload%E7%AF%84%E4%BE%8B.URL"><img src="/~img42"> onload和onUnload範例.URL</a>
+		
+		
+<td>135B<td>2015/7/10 下午 05:47:48<td>0
+	<tr class='even'><td>
+        <input type='checkbox' class='selector' name='selection' value="Prototype%20JavaScript%20framework%20%20a%20foundation%20for%20ambitious%20web%20applications.URL"  />
+		
+		
+		<a href="Prototype%20JavaScript%20framework%20%20a%20foundation%20for%20ambitious%20web%20applications.URL"><img src="/~img42"> Prototype JavaScript framework  a foundation for ambitious web applications.URL</a>
+		
+		
+<td>112B<td>2015/7/10 下午 05:47:48<td>0
+	<tr class=''><td>
+        <input type='checkbox' class='selector' name='selection' value="ROUND%20enhance.js%20%C2%B7%20GitHub.URL"  />
+		
+		
+		<a href="ROUND%20enhance.js%20%C2%B7%20GitHub.URL"><img src="/~img42"> ROUND enhance.js · GitHub.URL</a>
+		
+		
+<td>125B<td>2015/7/10 下午 06:17:37<td>1
+	<tr class='even'><td>
+        <input type='checkbox' class='selector' name='selection' value="Space.js%20%E2%80%93%20HTML-driven%20narrative%203D-scrolling.URL"  />
+		
+		
+		<a href="Space.js%20%E2%80%93%20HTML-driven%20narrative%203D-scrolling.URL"><img src="/~img42"> Space.js – HTML-driven narrative 3D-scrolling.URL</a>
+		
+		
+<td>121B<td>2015/7/10 下午 06:17:37<td>1
+
+            </table>
+        </form>
+	
+</div>
+
+</body>
+</html>
+<!-- Build-time: 0.062 -->

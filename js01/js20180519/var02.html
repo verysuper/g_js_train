@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>區域變數 範例</title>
+    
+  </head>
+  <body>
+  <h1>區域變數 範例(建議變數名稱不同)</h1>
+  <script type="text/javascript">
+    var msg = "outside<br>";
+    document.write(msg);
+    func1();
+    document.write(msg);
+    function func1(){
+      var msg = "intside<br>";
+      document.write(msg);
+    }
+  </script>
+  </body>
+</html>

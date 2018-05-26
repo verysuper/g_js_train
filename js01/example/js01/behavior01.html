@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>前往URL</title>
+<style type="text/css">
+#apDiv1 {
+	position: absolute;
+	left: 150px;
+	top: 10px;
+	width: 1000px;
+	height: 500px;
+	z-index: 1;
+	overflow: hidden;
+}
+#apDiv1 iframe {
+	overflow: hidden;
+}
+</style>
+<script type="text/javascript">
+function MM_goToURL() { //v3.0
+  var i, args=MM_goToURL.arguments; document.MM_returnValue = false;
+  for (i=0; i<(args.length-1); i+=2) eval(args[i]+".location='"+args[i+1]+"'");
+}
+</script>
+</head>
+
+<body>
+<h1>前往URL</h1>
+<p>請選擇下方按鈕：</p>
+<p>
+  <input name="button2" type="button" id="button2" onclick="MM_goToURL('right','http://www.gjun.com.tw');return document.MM_returnValue" value="前往巨匠電腦" />
+</p>
+<p>
+  <input name="button" type="button" id="button" onclick="MM_goToURL('right','http://www.microsoft.com.tw');return document.MM_returnValue" value="前往Microsoft" />
+</p>
+<p>
+  <input name="button3" type="button" id="button3" onclick="MM_goToURL('right','http://gjun.tw');return document.MM_returnValue" value="前往陳老師教學小站" />
+</p>
+<div id="apDiv1"><iframe src="" name="right" width="100%" marginwidth="0" height="100%" marginheight="0" align="top" scrolling="Auto" frameborder="0"></iframe></div>
+</body>
+</html>

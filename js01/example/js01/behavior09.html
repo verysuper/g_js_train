@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>設定文字</title>
+<script type="text/javascript">
+<!--
+function MM_setTextOfLayer(objId,x,newText) { //v9.0
+  with (document) if (getElementById && ((obj=getElementById(objId))!=null))
+    with (obj) innerHTML = unescape(newText);
+}
+function MM_setTextOfTextfield(objId,x,newText) { //v9.0
+  with (document){ if (getElementById){
+    var obj = getElementById(objId);} if (obj) obj.value = newText;
+  }
+}
+function MM_displayStatusMsg(msgStr) { //v1.0
+  window.status=msgStr;
+  document.MM_returnValue = true;
+}
+function MM_popupMsg(msg) { //v1.0
+  alert(msg);
+}
+//-->
+</script>
+</head>
+
+<body>
+<h1>設定文字</h1>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="250" valign="top"><a href="#" onclick="MM_setTextOfTextfield('文字欄位','','我是文字欄位的內容')">設定文字欄位文字</a><br />
+      <a href="#" onclick="MM_setTextOfLayer('right','','要顯示的內容，包含HTML也可以接受。')">設定容器文字</a><br />
+    <a href="#" onclick="MM_popupMsg('滑入就好了啦 !!!\r看下方狀態列就好...\r講都沒在聽...(氣)..!!!')" onmouseover="MM_displayStatusMsg('Hello.....這是狀態列文字   Hello.....這是狀態列文字');return document.MM_returnValue">設定狀態列文字(滑入)</a></td>
+    <td height="400" valign="top" id="right"><input name="文字欄位" type="text" id="文字欄位" value="此為表單文字欄位" /></td>
+  </tr>
+</table>
+</body>
+</html>

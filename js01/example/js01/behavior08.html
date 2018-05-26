@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>檢驗表單</title>
+<script type="text/javascript">
+<!--
+function MM_validateForm() { //v4.0
+  if (document.getElementById){
+    var i,p,q,nm,test,num,min,max,errors='',args=MM_validateForm.arguments;
+    for (i=0; i<(args.length-2); i+=3) { test=args[i+2]; val=document.getElementById(args[i]);
+      if (val) { nm=val.name; if ((val=val.value)!="") {
+        if (test.indexOf('isEmail')!=-1) { p=val.indexOf('@');
+          if (p<1 || p==(val.length-1)) errors+='- '+nm+' 必須為郵件位置\n';
+        } else if (test!='R') { num = parseFloat(val);
+          if (isNaN(val)) errors+='- '+nm+' 必須為數值\n';
+          if (test.indexOf('inRange') != -1) { p=test.indexOf(':');
+            min=test.substring(8,p); max=test.substring(p+1);
+            if (num<min || max<num) errors+='- '+nm+' must contain a number between '+min+' and '+max+'.\n';
+      } } } else if (test.charAt(0) == 'R') errors += '- '+nm+' 不接受空白\n'; }
+    } if (errors) alert('欄位有錯\n'+errors);
+    document.MM_returnValue = (errors == '');
+} }
+//-->
+</script>
+</head>
+
+<body>
+<h1>檢驗表單</h1>
+<form action="" method="post" name="form1" id="form1" onsubmit="MM_validateForm('姓名','','R','郵件','','RisEmail','密碼','','RisNum');return document.MM_returnValue">
+  <table width="500" border="0" align="center" cellspacing="1" style="background-color:#900;">
+    <tr>
+      <th style="color:#FFF" colspan="2">會員申請</th>
+    </tr>
+    <tr>
+      <td width="120" align="center" bgcolor="#FFFFCC">姓名</td>
+      <td bgcolor="#FFFFCC"><input type="text" name="姓名" id="姓名" /></td>
+    </tr>
+    <tr>
+      <td width="120" align="center" bgcolor="#FFFFCC">郵件</td>
+      <td bgcolor="#FFFFCC"><input type="text" name="郵件" id="郵件" /></td>
+    </tr>
+    <tr>
+      <td width="120" align="center" bgcolor="#FFFFCC">密碼</td>
+      <td bgcolor="#FFFFCC"><input type="password" name="密碼" id="密碼" /></td>
+    </tr>
+    <tr>
+      <td width="120" align="center" bgcolor="#FFFFCC">性別</td>
+      <td bgcolor="#FFFFCC"><input type="radio" name="性別" id="radio" value="radio" />
+        男
+        <input type="radio" name="性別" id="radio2" value="radio2" />
+        女</td>
+    </tr>
+    <tr>
+      <td width="120" align="center" bgcolor="#FFFFCC">職業</td>
+      <td bgcolor="#FFFFCC"><select name="職業" id="職業">
+        <option value="0">請選擇</option>
+        <option value="1">士</option>
+        <option value="2">農</option>
+        <option value="3">工</option>
+        <option value="4">商</option>
+      </select></td>
+    </tr>
+    <tr>
+      <td width="120" align="center" bgcolor="#FFFFCC">興趣</td>
+      <td bgcolor="#FFFFCC"><input type="checkbox" name="興趣" id="興趣" />
+        電影
+          <input type="checkbox" name="興趣" id="興趣" />
+          電視
+          <input type="checkbox" name="興趣" id="興趣" />
+          音樂</td>
+    </tr>
+    <tr>
+      <td width="120" align="center" bgcolor="#FFFFCC">居住地</td>
+      <td bgcolor="#FFFFCC"><select size="1" name="addr_city">
+        <option value="臺北市" selected="selected">臺北市</option>
+        <option value="高雄市">高雄市</option>
+        <option value="基隆市">基隆市</option>
+        <option value="臺北縣">臺北縣</option>
+        <option value="桃園縣">桃園縣</option>
+        <option value="新竹市">新竹市</option>
+        <option value="新竹縣">新竹縣</option>
+        <option value="苗栗縣">苗栗縣</option>
+        <option value="臺中市">臺中市</option>
+        <option value="臺中縣">臺中縣</option>
+        <option value="彰化縣">彰化縣</option>
+        <option value="南投縣">南投縣</option>
+        <option value="雲林縣">雲林縣</option>
+        <option value="嘉義市">嘉義市</option>
+        <option value="嘉義縣">嘉義縣</option>
+        <option value="臺南市">臺南市</option>
+        <option value="臺南縣">臺南縣</option>
+        <option value="高雄縣">高雄縣</option>
+        <option value="屏東縣">屏東縣</option>
+        <option value="臺東縣">臺東縣</option>
+        <option value="花蓮縣">花蓮縣</option>
+        <option value="宜蘭縣">宜蘭縣</option>
+        <option value="澎湖縣">澎湖縣</option>
+        <option value="金門縣">金門縣</option>
+        <option value="連江縣">連江縣</option>
+        <option value="海外地區">海外地區</option>
+      </select></td>
+    </tr>
+    <tr>
+      <td width="120" align="center" bgcolor="#FFFFCC">自我介紹</td>
+      <td bgcolor="#FFFFCC"><textarea name="自我介紹" id="自我介紹" cols="50" rows="5"></textarea></td>
+    </tr>
+    <tr>
+      <th colspan="2"><input type="submit" name="button" id="button" value="送出" />
+      <input type="reset" name="button2" id="button2" value="重設" /></th>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

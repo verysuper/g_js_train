@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>呼叫javascript</title>
+<script type="text/javascript">
+<!--
+function cc(){
+	//url(#default#homepage);
+	//this.setHomePage('http://www.yahoo.com.tw');
+	}
+function MM_callJS(jsStr) { //v2.0
+  return eval(jsStr)
+}
+//-->
+</script>
+</head>
+
+<body>
+<h1>呼叫javascript[<a href="behavior02.html" target="_blank">開新視窗</a>]</h1>
+<p>請選擇下方按鈕</p>
+<p>
+  <input name="button" type="button" id="button" onclick="MM_callJS('window.close()')"  value="關閉視窗" /> 
+  window.close()
+</p>
+<p>
+  <input name="button2" type="button" id="button2" onclick="MM_callJS('history.back()')" value="回上一頁" /> 
+  history.back()
+</p>
+<p>
+  <input name="button3" type="button" id="button3" onclick="MM_callJS('window.external.AddFavorite(\'http://tw.yahoo.com\', document.title)')" value="加入書籤" />
+window.external.AddFavorite('要加入的網址', document.title)
+</p>
+<p>
+<a href="javascript:window.location.href='http://gjun.tw';">陳老師教學網站</a> a href=<span style="font-size: 24px; color: #FF0004;">&quot;javascript:window.location.href=</span>'http://gjun.tw';&quot;</p>
+<p>
+<a href="#" onMouseOver="document.Book.src='img/1_over.gif'" onMouseDown="document.Book.src='img/1_down.gif'" onMouseOut="document.Book.src='img/1_normal.gif'"><img name="Book" src="img/1_normal.gif" border=0></a>
+onMouseOver=&quot;document.<span style="color: #FF0004; font-size: 24px;">name</span>.src='xxx.gif'&quot; onMouseDown=&quot;document.<span style="color: #FF0004; font-size: 24px;">name</span>.src='xxx.gif'&quot; onMouseOut=&quot;document.<span style="color: #FF0004; font-size: 24px;">name</span>.src='xxx.gif'&quot;&gt;</p>
+</body>
+</html>

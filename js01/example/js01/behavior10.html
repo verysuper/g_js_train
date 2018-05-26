@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>跳頁選單</title>
+<script type="text/javascript">
+<!--
+function MM_jumpMenu(targ,selObj,restore){ //v3.0
+  eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+  if (restore) selObj.selectedIndex=0;
+}
+//-->
+</script>
+<style type="text/css">
+#apDiv1 {
+	position:absolute;
+	left:150px;
+	top:10px;
+	width:800px;
+	height:540px;
+	z-index:1;
+	overflow: hidden;
+}
+#apDiv1 iframe {
+	overflow: hidden;
+}
+</style>
+</head>
+
+<body>
+<h1>跳頁選單</h1>
+<p>
+  <select name="select" id="select" onchange="MM_jumpMenu('right',this,0)">
+    <option value="" selected="selected">請選擇一個網站...</option>
+    <option value="http://gjun.tw">陳老師教學小站</option>
+    <option value="http://www.pcschool.com.tw">巨匠電腦</option>
+    <option value="http://www.microsoft.com.tw">Microsoft</option>
+  </select>
+</p>
+<div id="apDiv1"><iframe src="" name="right" width="100%" marginwidth="0" height="100%" marginheight="0" align="top" scrolling="Auto" frameborder="0"></iframe></div>
+</body>
+</html>

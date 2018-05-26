@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>更改屬性</title>
+<style type="text/css">
+<!--
+#apDiv1 {
+	position:absolute;
+	z-index:2;
+	background-color: #FFFFCC;
+}
+#photo {
+	height: 200px;
+	width: 300px;
+	position: absolute;
+	z-index: 1;
+}
+-->
+</style>
+<script type="text/javascript">
+<!--
+function MM_callJS(jsStr) { //v2.0
+  return eval(jsStr)
+}
+function MM_changeProp(objId,x,theProp,theValue) { //v9.0
+  var obj = null; with (document){ if (getElementById)
+  obj = getElementById(objId); }
+  if (obj){
+    if (theValue == true || theValue == false)
+      eval("obj.style."+theProp+"="+theValue);
+    else eval("obj.style."+theProp+"='"+theValue+"'");
+  }
+}
+//-->
+</script>
+</head>
+
+<body>
+<h1>更改屬性</h1>
+<ul id="menu">
+  <li><a href="#" onclick="MM_changeProp('photo','','left','40','DIV')">改變位置</a></li>
+  <li><a href="#" onclick="MM_changeProp('photo','','width','400','DIV')">改變尺寸</a></li>
+  <li><a href="#" onclick="MM_changeProp('select','','color','#F00','SELECT')">改變選單</a></li>
+  <li>
+    <input name="button" type="button" id="button" onclick="window.location.reload()" value="重新載入" />
+  </li>
+</ul>
+<div id="apDiv1">
+  <select name="select" id="select">
+    <option value="1">一</option>
+    <option value="2">二</option>
+    <option value="3">三</option>
+    <option value="4">四</option>
+    <option value="5">五</option>
+  </select>
+</div>
+<div id="photo" style="clear:both">
+	<img src="img/backColor.jpg" width="100%" height="100%" />
+</div>
+</body>
+</html>
